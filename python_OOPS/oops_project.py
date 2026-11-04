@@ -19,9 +19,9 @@ class Facebook:
         elif user_input == "2":
             self.sign_in()
         elif user_input == "3":
-            pass
+            self.post_mess()
         elif user_input == "4":
-            pass
+            self.friend()
         elif user_input == "5":
             exit()
             
@@ -51,6 +51,26 @@ class Facebook:
         
         print("\n")
         self.menu()
+        
+    
+    def post_mess(self):
+        if self.loggedin==True:
+            txt = input("Enter your message here to post -> ")
+            print(f"following content have been posted {txt}")
+        else:
+            print("Please sign in from the main menu")
+            print('\n')
+            self.menu()
+    
+    def friend(self):
+        if self.loggedin==True:
+            mess = input("Enter your message here -> ")
+            friend_name = input("Ennter you friend name who to send the message -> ")
+            print(f"Your message have been send to {friend_name}")
+        else:
+            print("Please sign in from the main menu")
+            print('\n')
+            self.menu()
             
             
             
