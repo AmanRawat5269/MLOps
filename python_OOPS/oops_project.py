@@ -1,11 +1,30 @@
 class Facebook:
+    
+    __user_id=0
+    
     def __init__(self):
+        self.id = Facebook.__user_id
+        Facebook.__user_id +=1
         self.username= ''
         self.password= ''
         self.loggedin= False
-        self.menu()
+        self.__name = "Default user"
+        # self.menu()
         
+    @staticmethod
+    def get_user_id():
+        return Facebook.__user_id
     
+    @staticmethod
+    def set_user_id(val):
+        Facebook.__user_id = val
+    
+    def get_name(self):
+        return self.__name
+    
+    def set_name(self, Name):
+        self.__name = Name   
+         
     def menu(self):
         user_input = input("""Welcome to the facebook !! How whould you like to proceed? 
                     1. Press 1 to signup
@@ -75,4 +94,3 @@ class Facebook:
             
             
             
-user1 = Facebook()
